@@ -83,3 +83,5 @@ Fast-forward
 Слияние веток объединением в новый commit- non fast-forvard merge
 
 =conflict solving
+=conflict solving
+add conflict
