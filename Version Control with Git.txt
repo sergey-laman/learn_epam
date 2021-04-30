@@ -1,0 +1,125 @@
+#VCG Courseware
+##Version control with Git
+###VCS concept
+###Version control types
+	Lock-modify-unlock strategy
+	Copy-modify-merge strategy
+	Centralized vs Distributed
+###Why Git
+###Download, install, configure
+	Загрузить гит можно тут: http://git-scm.com/downloads
+	Устанавливайте гит с настройками по умолчанию.
+	Генерация пары ssh ключей:
+
+     ssh-keygen -t rsa -C "vitali_shulha@epam.com"
+
+	Публичный ключ (id_rsa) нужно отправить владельцу репозитория для получения прав работы. Или загрузить в настройки профиля в bitbucket/github/gitlab
+	Настройка имени пользователя и емейла:
+
+     git config --global user.name “Vitali Shulha“
+     git config --global user.name “Sergey Laman“
+
+     git config --global user.email “vitali_Shulha@epam.com"
+     git config --global user.email “sergey.laman@gmail.com"
+
+     git config --global --replace-all
+     git config --global --replace-all user.name "FName LName"
+     
+###Create a github repo and clone it
+$ cd /d/Data/Learn_EPAM
+$ git clone git@github.com:sergey-laman/learn_epam.git
+$ git remote -v
+$ git status
+$ git add song.txt
+$ ls
+$ git status
+$ git commit -m(message) "add first 2 lines in the song"
+$ git log (history commit)
+$ git push (synhronisation)
+$ git log
+$ git pull
+
+###Pull from remote (подтягивание с удаленки)
+$ git log
+
+$ git fetch (synh not down)
+$ git merge
+$ git pull
+
+###Git Gui & gitk
+$ git gui&
+$ gitk&
+
+###Inside .git folder
+$ git show -s --pretty=raw b8a56
+$ git ls-tree b8a56
+$ git show
+
+###Undoing changes
+####Working directory (файловая система)
+git status
+git checkout -- README.md (отмена изменения файла на диске)
+git checkout . (отмена изменения вех файлов на диске)
+git clean -xdf (удаление файлов)
+####Staging area (git add)
+git resert -- file.txt (вытаскивает из индекса) git gui (из зеленого в красный) git status
+####Local Branch (git commit) откатывает до изменений Working directory
+git resert HEAD~1 (тильда)
+git resert HEAD^ (кэрот)
+git commit --amend -m "commit message"(дополнить файл не меняя commit)
+####Remote repository
+git revert <sha1>
+
+###Git reset
+git resert --soft HEAD~1 в файловую систему из add индекса
+git resert --mixed HEAD^ (без флагов) в файловую систему из commit
+git resert --hard HEAD^ (удаление изменений в файле)
+
+###Git revert (отмена пушей)
+git revert <sha1>
+
+git restore -- README.md
+Вы сделали коммит и забыли добавить пару изменений. Задача - добавить данные в уже созданный коммит. Укажите все решения.
+1/1 point
+git commit --amend
+git gui, дальше выберу amend last commit чекбокс
+
+$ git add song.txt или $ git gui&	git resert --soft HEAD~1
+$ git commit				git resert --mixed HEAD^
+					git resert --hard HEAD^
+
+$ git clean -xdf
+$ git restore .
+
+$ git checkout .
+$ git reset HEAD~1
+$ git status
+$ git log
+
+git revert
+редактор VI
+
+incert
+text
+esc
+:wq
+:q! выйти и ничего не менять
+
+.gitignore
+
+=fast-forvard merge
+Слияние веток - fast-forvard merge
+$ git merge feature
+Updating b8a5601..8087aed
+Fast-forward
+ song.txt | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+Слияние веток объединением в новый commit- non fast-forvard merge
+
+=conflict solving
+git merge --abort =abotr merge
+git checkout --Xours(vjb изменения) --Xtheirs =resolve by selecting version
+git diff =resolve manually
+git revert =undo merge
+
+User merge tool

@@ -83,5 +83,9 @@ Fast-forward
 Слияние веток объединением в новый commit- non fast-forvard merge
 
 =conflict solving
-=conflict solving
-add conflict
+git merge --abort =abotr merge
+git checkout --Xours(vjb изменения) --Xtheirs =resolve by selecting version
+git diff =resolve manually
+git revert =undo merge
+
+User merge tool
