@@ -77,6 +77,12 @@ git resert --hard HEAD^ (удаление изменений в файле)
 
 ###Git revert (отмена пушей)
 git revert <sha1>
+редактор Vi (incert, Esc)
+incert
+<text>
+esc
+:wq
+:q! выйти и ничего не менять
 
 git restore -- README.md
 Вы сделали коммит и забыли добавить пару изменений. Задача - добавить данные в уже созданный коммит. Укажите все решения.
@@ -88,25 +94,14 @@ $ git add song.txt или $ git gui&	git resert --soft HEAD~1
 $ git commit				git resert --mixed HEAD^
 					git resert --hard HEAD^
 
-$ git clean -xdf
-$ git restore .
-
-$ git checkout .
-$ git reset HEAD~1
-$ git status
-$ git log
-
-git revert
-редактор VI
-
-incert
-text
-esc
-:wq
-:q! выйти и ничего не менять
-
+###.gitignore (скрытие изменений)
 .gitignore
+*.log - скрытие файлов
+!error.log (показывать)
+/TODO - скрытие директорий
+TODO/ - скрытие вех файлов в директорий
 
+###Branching and merge (ветки и слияние)
 =fast-forvard merge
 Слияние веток - fast-forvard merge
 $ git merge feature
