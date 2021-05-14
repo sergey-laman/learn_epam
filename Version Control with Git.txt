@@ -123,12 +123,9 @@ git checkout --Xours(vjb изменения) --Xtheirs =resolve by selecting ver
 git diff =resolve manually
 git revert =undo merge
 
-<<<<<<< HEAD
 One thousand burning arrows
 Fill the starlit sky
-=======
 The ship glides gently on the waves
 As day turns into night
->>>>>>> feature
 
 User merge tool
