@@ -72,6 +72,15 @@ esc
 :q! выйти и ничего не менять
 
 .gitignore
+*.log скрывает все файлы с расширением .log
+!error.iog открывает то что после !
+/TODO скрывает директории после/
+build/ скрывает все файлы в диектории build
+
+
+***Merge
+git checkout -b 'feature' создание ветки
+    checkout -b 'feature' Switched to a new branch 'feature'
 
 =fast-forvard merge
 Слияние веток - fast-forvard merge

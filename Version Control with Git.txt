@@ -102,8 +102,14 @@ $ git commit				git resert --mixed HEAD^
 TODO/ - скрытие вех файлов в директорий
 
 ###Branching and merge (ветки и слияние)
+$ checkout -b 'feature'
+$ git checkout main
+$ git checkout feature
+
+
 =fast-forvard merge
 Слияние веток - fast-forvard merge
+
 $ git merge feature
 Updating b8a5601..8087aed
 Fast-forward
@@ -116,5 +122,13 @@ git merge --abort =abotr merge
 git checkout --Xours(vjb изменения) --Xtheirs =resolve by selecting version
 git diff =resolve manually
 git revert =undo merge
+
+<<<<<<< HEAD
+One thousand burning arrows
+Fill the starlit sky
+=======
+The ship glides gently on the waves
+As day turns into night
+>>>>>>> feature
 
 User merge tool
