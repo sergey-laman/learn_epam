@@ -123,6 +123,14 @@ git checkout --Xours(vjb изменения) --Xtheirs =resolve by selecting ver
 git diff =resolve manually
 git revert =undo merge
 
+###Hurt Me Plenty
+$ git checkout -b 'storm'
+$ git checkout main
+$ git tag session1
+$ git tag --list
+$ git checkout storm
+$ git rebase main
+
 One thousand burning arrows
 Fill the starlit sky
 The ship glides gently on the waves
