@@ -130,7 +130,9 @@ $ git tag session1
 $ git tag --list
 $ git checkout storm
 $ git rebase main
-$ git branch -d deletegt
+$ git branch -d delete
+# git rebase -i {HEAD~_commit_count_|commit_hash}
+# git push -f
 
 Список локальных веток
 Чтобы вывести список локальных веток используется команда:
